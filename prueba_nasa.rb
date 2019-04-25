@@ -28,9 +28,9 @@ def build_web_page(data)
   photos = data['photos'].map{|x| x['img.src']}
   html = "<html>\n<head>\n</head>\n<body>\n<ul>\n"
   photos.each do |photo|
-    html += "<li><img src=\"#{photo}\"></li>\n"
+    html += "<li><img src='#{photo}'></li>"
   end
-  html += "</ul>\n</body>\<html>"
+    html += "</ul>\n</body>\<html>"
   File.write('output.html', html)
 end
 
