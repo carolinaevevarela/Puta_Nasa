@@ -25,7 +25,7 @@ data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?
 
 
 def build_web_page(data)
-  photos = data['photos'].map{|x| x['img.src']}
+  photos = data['photos'].map{|x| x['img_src']}
   html = "<html>\n<head>\n</head>\n<body>\n<ul>\n"
   photos.each do |photo|
     html += "<li><img src='#{photo}'></li>"
